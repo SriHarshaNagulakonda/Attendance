@@ -1,0 +1,156 @@
+<html>
+<head>
+	<style >
+		table.t1s{
+			margin-left: 10%;
+		}
+	</style>
+<script type="text/javascript">
+function validate(form1)
+{
+  var x = document.getElementById("myFile").value;
+  alert(x);
+  document.getElementById("demo").value = x;
+var name=window.document.form1.name.value;
+var fname=window.document.form1.fname.value;
+var mname=window.document.form1.mname.value;
+var k=0;
+phn=new RegExp("[0-9]{10}","g");
+pin=new RegExp("[0-9]{6}","g");
+if(name.length==0)
+{
+	document.getElementById('a').innerHTML="Name should be filled";
+	k=1;
+}
+else
+document.getElementById('a').innerHTML="";
+if(fname.length==0)
+{
+	document.getElementById('f').innerHTML="Father's Name should be filled";
+	k=1;
+}
+else
+document.getElementById('f').innerHTML="";
+if(mname.length==0)
+{
+	document.getElementById('mn').innerHTML="Mother's Name should be filled";
+	k=1;
+}
+else
+document.getElementById('mn').innerHTML="";
+var gender=document.form1.gender.value;
+if(gender=='')
+{
+	document.getElementById('g').innerHTML="Gender can't be NULL";
+	k=1;
+}
+else
+document.getElementById('g').innerHTML="";
+var city=document.form1.city.value;
+if(city.length==0)
+{
+	document.getElementById('c').innerHTML="City should be filled";
+	k=1;
+}
+else
+document.getElementById('c').innerHTML="";
+
+var pinc=document.form1.pin.value;
+if(!pinc.match(pin))
+{
+	document.getElementById('pi').innerHTML="Invalid Pin Code ";
+	k=1;
+}
+else
+document.getElementById('pi').innerHTML="";
+
+var phone=document.form1.phone.value;
+if(!phone.match(phn))
+{
+	document.getElementById('ph').innerHTML="Invalid Phone number";
+	k=1;
+}
+else
+document.getElementById('ph').innerHTML="";
+m=new RegExp("[a-zA-Z0-9]{1,}@[a-z]{3,}\.[a-z]{2,}","g");
+var mail=document.form1.mail.value; 
+if(!mail.match(m))
+{
+	document.getElementById('m').innerHTML="Invalid Mail id";
+	k=1;
+}
+else
+document.getElementById('m').innerHTML="";
+if(k==0)
+	return true;
+return false;
+}
+</script>
+<head/>
+<body>
+	<form name="form1" method="post" action="stud_reg.jsp">
+		<b>
+			<center>
+				<H2 STYLE="COLOR:RED">STUDENT REGISTERATION FORM</H2>
+			</CENTER>
+			<table cellspacing="5" class="t1s">
+				<tr>
+					<td>Name</td>
+					<td style="width:50"><input type="text" style="width:150" name="name"></td>
+					<td><font color="blue" size="1 "><span id="a"></span></font></td>
+				</tr>
+				<tr>
+					<td>Father Name</td>
+					<td style="width:50"><input type="text" style="width:150" name="fname"></td>
+					<td><font color="blue" size="1 "><span id="f"></span></font></td>
+				</tr>
+				<tr>
+					<td>Mother Name</td>
+					<td style="width:50"><input type="text" style="width:150" name="mname"></td>
+					<td><font color="blue" size="1 "><span id="mn"></span></font></td>
+				</tr>
+				<tr>
+					<td>Gender</td>
+					<td><input type="radio" name="gender" value="Male">Male
+						<input type="radio" name="gender" value="Female">Female</td>
+					<td><font color="blue" size="1 "><span id="g"></span></font></td>
+				</tr>
+<tr>
+<td> date  of birth</td>
+<td> <input type="date" name= "date" /></td>
+<td><font color="blue" size="1 "></font></td><br><br>
+</tr>
+<tr>
+<td>City</td>
+<td><input type="text" name="city"></td>
+	<td><font color="blue" size="1 "><span id="c"></span></font></td>
+</tr>
+<tr>
+<td>Pin Code</td>
+<td><input type="text" name="pin"></td>
+	<td><font color="blue" size="1 "><span id="pi"></span></font></td>
+</tr>
+<tr>
+<td>E-mail</td>
+<td><input type="text" name="mail"></td>
+	<td><font color="blue" size="1 "><span id="m"></span></font></td>
+</tr>
+<tr>
+<td>Phone.No</td>
+<td><input type="text" name="phone" maxlength="10"></td>
+<td><font color="blue" size="1 "><span id="ph"></span></font></td>
+</tr>
+<tr>
+<td>Photo(Optional)</td>
+<td><input type="file" id="myFile" name="photo"></td>
+	<td><font color="blue" size="1 "></font></td>
+<input type="hidden" name="file" id="demo" value="file">
+</tr>
+<tr>
+	<td></td>
+<td><input type="submit" VALUE="Submit" onclick="return validate(this)"></td>
+</tr>
+</table>
+</b>	</form>
+</body>
+</html>

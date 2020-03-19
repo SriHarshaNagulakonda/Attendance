@@ -1,0 +1,22 @@
+<style type="text/css">
+	textarea {
+  width: 55%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 6px solid #ccc;
+  border-radius: 20px;
+  background-color: #f8f8f8;
+
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  font-size: 16px;
+  resize: none;
+}
+textarea:focus {
+  width: 85%;
+  border: 3px solid red;
+  padding: 20px 30px
+}
+
+</style>
